@@ -1,0 +1,36 @@
+{
+  "weight": {
+    "kg": "185",
+    "lb": "407.85"
+  },
+  "height": {
+    "m": "1.5",
+    "cm": "150",
+    "in": "59.06",
+    "ft-in": "4-11.1"
+  },
+  "bmi": {
+    "value": "82.22",
+    "status": "Obese Class III (Very severely obese)",
+    "risk": "High risk of developing heart disease, high blood pressure, stroke, diabetes",
+    "prime": "3.57"
+  },
+  "ideal_weight": "41.0kg to 50.1kg",
+  "surface_area": "2.5",
+  "ponderal_index": "54.81",
+  "bmr": {
+    "value": "2672.5"
+  },
+  "whr": {
+    "value": "0",
+    "status": ""
+  },
+  "whtr": {
+    "value": "0",
+    "status": ""
+  },
+  "sex": "m",
+  "age": "24",
+  "waist": "0",
+  "hip": "0"
+}

@@ -24,34 +24,38 @@ struct HomeInfoView: View {
                     .foregroundStyle(.white)
 
                 HStack(spacing: 15) {
-                    Button {}
-                        label: {
-                            Text("-")
-                                .font(Font.system(size: 35, weight: .regular, design: .rounded))
-                                .foregroundStyle(.black)
-                                .background(
-                                    Rectangle()
-                                        .fill(Color("greenColor"))
-                                        .frame(width: 30, height: 30)
-                                        .cornerRadius(5)
-                                )
-                        }
+                    Button {
+                        value -= 1
+                    }
+                    label: {
+                        Text("-")
+                            .font(Font.system(size: 35, weight: .regular, design: .rounded))
+                            .foregroundStyle(.black)
+                            .background(
+                                Rectangle()
+                                    .fill(Color("greenColor"))
+                                    .frame(width: 30, height: 30)
+                                    .cornerRadius(5)
+                            )
+                    }
                     Text("\(value)")
                         .font(Font.system(size: 40, weight: .bold, design: .rounded))
                         .foregroundStyle(.white)
 
-                    Button {}
-                        label: {
-                            Text("+")
-                                .font(Font.system(size: 35, weight: .regular, design: .rounded))
-                                .foregroundStyle(.black)
-                                .background(
-                                    Rectangle()
-                                        .fill(Color("greenColor"))
-                                        .frame(width: 30, height: 30)
-                                        .cornerRadius(5)
-                                )
-                        }
+                    Button {
+                        value += 1
+                    }
+                    label: {
+                        Text("+")
+                            .font(Font.system(size: 35, weight: .regular, design: .rounded))
+                            .foregroundStyle(.black)
+                            .background(
+                                Rectangle()
+                                    .fill(Color("greenColor"))
+                                    .frame(width: 30, height: 30)
+                                    .cornerRadius(5)
+                            )
+                    }
                 }
 
                 Text(description)

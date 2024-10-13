@@ -32,5 +32,5 @@ struct StyledNavigationLink<T: View>: View {
 }
 
 #Preview {
-    StyledNavigationLink(view: ResultUIView(), title: "CALCULATE", imageName: "arrow.trianglehead.2.counterclockwise")
+    StyledNavigationLink(view: HomeUIView(), title: "CALCULATE", imageName: "arrow.trianglehead.2.counterclockwise")
 }

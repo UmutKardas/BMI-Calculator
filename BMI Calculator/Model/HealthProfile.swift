@@ -8,13 +8,13 @@
 import Foundation
 
 struct HealthProfile: Codable {
-    let weight: Weight
-    let height: Height
-    let bmi: Bmi
-    let idealWeight, surfaceArea, ponderalIndex: String
-    let bmr: Bmr
-    let whr, whtr: Whr
-    let sex, age, waist, hip: String
+    let weight: Weight?
+    let height: Height?
+    let bmi: Bmi?
+    let idealWeight, surfaceArea, ponderalIndex: String?
+    let bmr: Bmr?
+    let whr, whtr: Whr?
+    let sex, age, waist, hip: String?
 
     enum CodingKeys: String, CodingKey {
         case weight, height, bmi
@@ -26,15 +26,15 @@ struct HealthProfile: Codable {
 }
 
 struct Bmi: Codable {
-    let value, status, risk, prime: String
+    let value, status, risk, prime: String?
 }
 
 struct Bmr: Codable {
-    let value: String
+    let value: String?
 }
 
 struct Height: Codable {
-    let m, cm, heightIn, ftIn: String
+    let m, cm, heightIn, ftIn: String?
 
     enum CodingKeys: String, CodingKey {
         case m, cm
@@ -44,9 +44,9 @@ struct Height: Codable {
 }
 
 struct Weight: Codable {
-    let kg, lb: String
+    let kg, lb: String?
 }
 
 struct Whr: Codable {
-    let value, status: String
+    let value, status: String?
 }

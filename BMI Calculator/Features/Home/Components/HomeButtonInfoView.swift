@@ -10,12 +10,16 @@ import SwiftUI
 struct HomeButtonInfoView: View {
     var title: String
     var imageName: String
+    var type: Gender
+    var selectedGender: Binding<Gender>
 
     var body: some View {
-        Button {} label: {
+        Button {
+            selectedGender.wrappedValue = type
+        } label: {
             ZStack {
                 RoundedRectangle(cornerRadius: 10)
-                    .foregroundStyle(Color("selectedColor"))
+                    .foregroundStyle(Color(type == selectedGender.wrappedValue ? "selectedColor" : "backgroundColor"))
                 VStack(spacing: 20) {
                     Image(imageName)
                         .resizable()
@@ -32,5 +36,5 @@ struct HomeButtonInfoView: View {
 }
 
 #Preview {
-    HomeButtonInfoView(title: "MALE", imageName: "maleIcon")
+    HomeButtonInfoView(title: "FEMALE", imageName: "femaleIcon", type: .female, selectedGender: .constant(.female))
 }

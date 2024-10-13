@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ResultUIView: View {
+    @StateObject var viewModel: ResultViewModel
+
     var body: some View {
         NavigationStack {
             ZStack {
@@ -35,36 +37,39 @@ struct ResultUIView: View {
                                     .padding([.leading, .top], 10)
 
                                 Spacer()
-
-                                Text("Underweight")
-                                    .font(.footnote)
-                                    .foregroundStyle(Color("greenColor"))
-                                    .fontWeight(.bold)
-                                    .frame(maxWidth: .infinity, alignment: .trailing)
-                                    .padding([.trailing, .top], 10)
                             }
 
                             Spacer()
-                            Text("18.5")
+                            Text(viewModel.result?.bmi?.value ?? "")
                                 .font(Font.system(size: 60, weight: .bold, design: .rounded))
                                 .foregroundStyle(.white)
 
                             Spacer()
-                            Slider(value: .constant(180), in: 0 ... 250)
-                                .padding(.horizontal, 10)
-                                .tint(.gray)
+
+                            if let value = Double(viewModel.result?.bmi?.value ?? "") {
+                                Slider(value: .constant(value), in: 0 ... 250)
+                                    .padding(.horizontal, 10)
+                                    .tint(.gray)
+                            }
                         }
                     }
                     .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.width * 0.45)
 
-                    Text("Underweight")
+                    Text("\(viewModel.result?.bmi?.status ?? "")")
                         .font(.title2)
-                        .foregroundStyle(.white)
+                        .foregroundStyle(Color("greenColor"))
                         .fontWeight(.bold)
-                        .frame(width: 360, alignment: .leading)
+                        .frame(width: UIScreen.main.bounds.width * 0.9, alignment: .leading)
                         .padding(.top, 20)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.7)
 
-                    ResultDescriptionView(title: "Low Risk", description: "Moderate risk of developing heart disease, high blood pressure, stroke, diabetes")
+                    Text("- \(viewModel.result?.bmi?.risk ?? "")")
+                        .font(.footnote)
+                        .foregroundStyle(.white)
+                        .opacity(0.7)
+                        .frame(width: UIScreen.main.bounds.width * 0.9, alignment: .leading)
+                        .padding(.top, 5)
 
                     Spacer()
 
@@ -79,5 +84,5 @@ struct ResultUIView: View {
 }
 
 #Preview {
-    ResultUIView()
+    ResultUIView(viewModel: ResultViewModel(result: nil))
 }

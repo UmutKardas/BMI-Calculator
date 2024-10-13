@@ -8,10 +8,10 @@
 import Foundation
 
 struct UserHealthData: Codable {
-    let weight, height: Eight
+    let weight, height: Measurement
     let sex, age: String
 }
 
-struct Eight: Codable {
+struct Measurement: Codable {
     let value, unit: String
 }
