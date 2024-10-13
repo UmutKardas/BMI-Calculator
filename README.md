@@ -5,6 +5,8 @@
 - **SwiftUI**: For building the user interface.
 - **Alamofire**: For making network requests (if applicable).
 - **Combine**: For handling asynchronous events.
+- **Dependency Injection**: For managing dependencies.
+- **JSONDecoder**: For decoding JSON data.
 - **MVVM**: For organizing the code structure.
 
 ## Features
